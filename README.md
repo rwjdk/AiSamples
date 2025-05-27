@@ -19,8 +19,13 @@ Most of these Samples rely on an Azure OpenAI Resource with the following to be 
 - See the how-to guides on how to create your Azure Resources
 
 ## Samples:
+- [Hello World](src/HelloWorldExample)
 - [Structured Output](src/StructuredOutput)
 - [Model Context Protocol](src/ModelContextProtocol)
+- [Function Calling](src/FunctionCallingExample)
+- [RAG](src/RagExample)
+- [Non Azure OpenAI options](src/NonAzureOpenAiOptions)
+- [Non Semantic Kernel options](src/NonSemanticKernelOptions)
 
 ## How-to Guides
 - General
