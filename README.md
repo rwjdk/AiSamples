@@ -1,5 +1,5 @@
 # AI Samples
-In this Repo, we explore various AI Samples to learn to be successful with AI and Semantic Kernel
+In this Repo, we explore various AI Samples to learn to be successful with AI in C# and Semantic Kernel
 
 # Setup
 These Samples rely on an Azure OpenAI Resource with the following to be set up with .NET User Secrets in the Shared Project (in the following format)
@@ -27,3 +27,7 @@ These Samples rely on an Azure OpenAI Resource with the following to be set up w
  - For RAG
    - [How to Create an Azure Search Service Resource in Azure](HowToGuides/HowToCreateAnAzureSearchResourceInAzure.md#how-to-create-an-azure-search-service-resource-in-azure)
    - [How to Create a CosmosDB Service Resource in Azure](HowToGuides/HowToCreateACosmosDbResourceInAzure.md)
+  
+# Video Material
+For more AI Tutorials and videos, please see my [YouTube Channel](https://www.youtube.com/@rwj_dk/videos)
+
