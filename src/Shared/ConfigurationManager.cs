@@ -9,7 +9,8 @@ public class ConfigurationManager
     {
       "Endpoint": "todo", //URL of your Azure OpenAI Service
       "Key": "todo", //Key of your Azure OpenAI Service
-      "ChatDeploymentName": "todo" //DeploymentName of your Azure OpenAI Chat-model (example: "gpt-4o-mini")
+      "ChatDeploymentName": "todo", //DeploymentName of your Azure OpenAI Chat-model (example: "gpt-4o-mini")
+      "EmbeddingModelName": "todo" //Embedding Model for RAG (example: "text-embedding-ada-002")
     }
     ************************************************************************************************************************************************
     - See the how-to guides on how to create your Azure Resources in the ReadMe
@@ -24,7 +25,8 @@ public class ConfigurationManager
         string endpoint = configurationRoot["Endpoint"] ?? throw notSetupException;
         string key = configurationRoot["Key"] ?? throw notSetupException;
         string chatDeploymentName = configurationRoot["ChatDeploymentName"] ?? throw notSetupException;
+        string embeddingModelName = configurationRoot["EmbeddingModelName"] ?? string.Empty;
 
-        return new Configuration(endpoint, key, chatDeploymentName);
+        return new Configuration(endpoint, key, chatDeploymentName, embeddingModelName);
     }
 }

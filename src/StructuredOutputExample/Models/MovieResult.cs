@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace StructuredOutput.Models;
+namespace StructuredOutputExample.Models;
 
 public class MovieResult
 {

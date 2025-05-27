@@ -1,4 +1,4 @@
-﻿namespace StructuredOutput.Models;
+﻿namespace StructuredOutputExample.Models;
 
 public enum MovieGenre
 {

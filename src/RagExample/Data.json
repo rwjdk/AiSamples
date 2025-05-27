@@ -1,0 +1,229 @@
+{
+  "Heroes": [
+    {
+      "Id": "1",
+      "Sex": "Male",
+      "Name": "Captain Avocado",
+      "Description": "A hero who can generate an endless supply of avocados, great for nutritional power-ups and guacamole fights!",
+      "Weakness": "Being left in the sun too long causes him to become mushy and ineffective.",
+      "Strenght": "Superhuman nutrition knowledge and can throw avocados at super speed.",
+      "BackgroundStory": "Once a simple grocer, he was exposed to a mysterious green liquid that made him the sentinel of healthy eating!"
+    },
+    {
+      "Id": "2",
+      "Sex": "Female",
+      "Name": "The Caffeinator",
+      "Description": "Can brew coffee faster than light, energizing herself and her allies.",
+      "Weakness": "Lack of sleep; if she doesn�t drink coffee for too long, she becomes sluggish.",
+      "Strenght": "Enhanced speed and agility when caffeinated, can also create coffee shields.",
+      "BackgroundStory": "A barista turned hero after discovering she could channel caffeine into superpowers."
+    },
+    {
+      "Id": "3",
+      "Sex": "Male",
+      "Name": "Sir Giggles",
+      "Description": "An uncontrollable giggler that disarms villains with laughter and creates joy bombs!",
+      "Weakness": "Can't fight back when he starts giggling uncontrollably, especially at bad jokes.",
+      "Strenght": "Ability to cause uncontrollable laughter in others, making them helpless in combat.",
+      "BackgroundStory": "Once a stand-up comedian, he found a magical microphone that turned his humor into superpowers."
+    },
+    {
+      "Id": "4",
+      "Sex": "Female",
+      "Name": "Bubblewrap Warrior",
+      "Description": "Can encase enemies in bubblewrap, rendering them harmless and squeaky.",
+      "Weakness": "Pops easily when exposed to sharp objects.",
+      "Strenght": "Ultimate defense and annoyance factor with the popping sounds.",
+      "BackgroundStory": "She was a packaging engineer until her passion for protection turned into superpowers."
+    },
+    {
+      "Id": "5",
+      "Sex": "Male",
+      "Name": "The Punctuator",
+      "Description": "Fights crime by correcting grammar and punctuation; villains are confused by his impeccable edits.",
+      "Weakness": "His powers only work on those who read, leaving illiterate criminals uncaught.",
+      "Strenght": "Can produce grammar bomb blasts that cause confusion and halt evil plans.",
+      "BackgroundStory": "A frustrated teacher, he gained powers from a magical red pen that took effect during a grading marathon."
+    },
+    {
+      "Id": "6",
+      "Sex": "Female",
+      "Name": "Cat Nap Queen",
+      "Description": "Falls asleep anywhere and wakes fresh with incredible strength!",
+      "Weakness": "Can be easily distracted by cozy places and fluffy things.",
+      "Strenght": "Enhanced senses and super strength after a quick snooze.",
+      "BackgroundStory": "Once a sleep-deprived parent, she got a magical pillow that granted her powers in dreams."
+    },
+    {
+      "Id": "7",
+      "Sex": "Male",
+      "Name": "The Disco Inferno",
+      "Description": "Uses dance moves and disco lights to create dazzling distractions and cause villains to boogie away.",
+      "Weakness": "Can�t perform without music; silence takes away his mojo.",
+      "Strenght": "Enthralling dance skills and light manipulation that can blind enemies momentarily.",
+      "BackgroundStory": "A former disco DJ who was touched by the spirit of dance during a full moon party."
+    },
+    {
+      "Id": "8",
+      "Sex": "Female",
+      "Name": "Overthinker",
+      "Description": "Can foresee 100 possible outcomes of any situation, but struggles to make a decision!",
+      "Weakness": "Analysis paralysis means she often hesitates at crucial moments.",
+      "Strenght": "Incredible foresight helps allies prepare for battles.",
+      "BackgroundStory": "A strategist who found a time crystal that opened her mind to future possibilities."
+    },
+    {
+      "Id": "9",
+      "Sex": "Male",
+      "Name": "Snackman",
+      "Description": "Can summon any snack food at will, trapping foes in a smorgasbord!",
+      "Weakness": "Always hungry, he needs snacks to maintain his energy.",
+      "Strenght": "Can launch snacks as projectiles with irresistible aromas.",
+      "BackgroundStory": "Once a junk food enthusiast, he discovered his power after an all-you-can-eat buffet."
+    },
+    {
+      "Id": "10",
+      "Sex": "Female",
+      "Name": "Flashlight Fairy",
+      "Description": "Illuminates dark areas with her magical light, guiding lost souls home.",
+      "Weakness": "Power fades in bright daylight, making her weak during the daytime.",
+      "Strenght": "Can create blinding flashes that distract or subdue enemies.",
+      "BackgroundStory": "A night shift worker who found a magical flashlight, granting her nocturnal powers."
+    },
+    {
+      "Id": "11",
+      "Sex": "Male",
+      "Name": "Time-Out Dad",
+      "Description": "Uses a magic stopwatch to pause time, giving him a chance to choose better parenting techniques.",
+      "Weakness": "Can only pause time for a limited duration before he must recharge.",
+      "Strenght": "Can effectively neutralize threats by freezing them in time temporarily.",
+      "BackgroundStory": "A dad trying to manage life�s chaos after a strange encounter at daycare."
+    },
+    {
+      "Id": "12",
+      "Sex": "Female",
+      "Name": "Queen Quirk",
+      "Description": "Has the ability to turn mundane tasks into wild adventures with a wave of her wand.",
+      "Weakness": "Her spells often fizzle out when too many people are watching.",
+      "Strenght": "Imagination-based abilities allow her to overcome obstacles creatively.",
+      "BackgroundStory": "A boring office worker who stumbled upon a magical quirk lamp."
+    },
+    {
+      "Id": "13",
+      "Sex": "Male",
+      "Name": "Mailman Marvel",
+      "Description": "Delivers mail at supersonic speeds, making sure everyone gets their packages on time!",
+      "Weakness": "Became overly reliant on GPS; misdirections slow him down.",
+      "Strenght": "Incredible speed and package-throwing accuracy.",
+      "BackgroundStory": "Became a hero after racing against time to save a package delivery during a disaster."
+    },
+    {
+      "Id": "14",
+      "Sex": "Female",
+      "Name": "The Cookie Commando",
+      "Description": "Creates and throws cookies as projectiles that explode into delicious crumbs.",
+      "Weakness": "Can be distracted by the smell of fresh cookies, leading her to devour them instead of using them.",
+      "Strenght": "Gourmet baking skills that heal allies when consumed.",
+      "BackgroundStory": "A baker who found a secret recipe that granted her heroic powers."
+    },
+    {
+      "Id": "15",
+      "Sex": "Male",
+      "Name": "Professor Popcorn",
+      "Description": "Possesses the ability to pop popcorn at will and create popcorn barriers.",
+      "Weakness": "When he gets too hot, he can overheat, leaving him temporarily incapacitated.",
+      "Strenght": "Surprisingly strong, and his popcorn can act as both nourishment and projectiles.",
+      "BackgroundStory": "An ex-movie projectionist who fell into a vat of magical butter."
+    },
+    {
+      "Id": "16",
+      "Sex": "Female",
+      "Name": "The Fluffinator",
+      "Description": "Can generate clouds of cotton candy smoke that confuses enemies and makes them giggle.",
+      "Weakness": "Sustains a sugar crash after using her powers too much.",
+      "Strenght": "Masters of stealth and distraction, creating delightful sugary diversions.",
+      "BackgroundStory": "Once a carnival worker, she received a blessing from the cotton candy fairy."
+    },
+    {
+      "Id": "17",
+      "Sex": "Male",
+      "Name": "Electro-Meme",
+      "Description": "Harnesses the power of internet memes to distract and incapacitate villains.",
+      "Weakness": "Overuse of memes can backfire, making him lose effectiveness.",
+      "Strenght": "Meme mastery allows him to communicate and confuse with humor.",
+      "BackgroundStory": "An internet enthusiast who found a cosmic meme generator."
+    },
+    {
+      "Id": "18",
+      "Sex": "Female",
+      "Name": "Soshing Mist",
+      "Description": "Creates thick mist that confuses enemies and allows for stealthy escapes.",
+      "Weakness": "It evaporates quickly in heat, leaving her vulnerable.",
+      "Strenght": "Incredible stealth and concealment powers to navigate dangerous areas.",
+      "BackgroundStory": "Discovered her powers while meditating in a foggy forest."
+    },
+    {
+      "Id": "19",
+      "Sex": "Male",
+      "Name": "Captain Cold Feet",
+      "Description": "Can freeze moments in awkward situations, allowing people to rethink their actions.",
+      "Weakness": "His power only works when things are at a standstill, so moving targets are immune.",
+      "Strenght": "Ability to create chilling moments that cause instant reflection.",
+      "BackgroundStory": "A former therapist turned hero after finding a mystical pair of socks."
+    },
+    {
+      "Id": "20",
+      "Sex": "Female",
+      "Name": "Whirlwind Washer",
+      "Description": "Uses her laundry skills to combat stains and odors, saving the day one shirt at a time.",
+      "Weakness": "Water-based powers are ineffective during droughts.",
+      "Strenght": "Can create whirlwinds of clean laundry that blinds and binds enemies.",
+      "BackgroundStory": "Became a hero when she awakened powers while washing a cursed shirt."
+    },
+    {
+      "Id": "21",
+      "Sex": "Male",
+      "Name": "Captain Compost",
+      "Description": "Turns waste into nutrient-rich soil, rejuvenating the environment.",
+      "Weakness": "Transforms only work with organic waste; inorganic items hinder him.",
+      "Strenght": "Environmentally friendly super strength through compost shields.",
+      "BackgroundStory": "A conservationist who reached enlightenment while gardening in his local park."
+    },
+    {
+      "Id": "22",
+      "Sex": "Female",
+      "Name": "The Peppermint Protector",
+      "Description": "Can summon minty fresh blasts that freeze villains in their tracks.",
+      "Weakness": "Too much peppermint scent can disorient her as well.",
+      "Strenght": "A fresh approach to crime-fighting with scent-based powers.",
+      "BackgroundStory": "A love for mints in childhood led her to discover her powers during an explosion at a candy factory."
+    },
+    {
+      "Id": "23",
+      "Sex": "Male",
+      "Name": "Tequila Thunder",
+      "Description": "Can create thunderous soundwaves by shouting fun phrases!",
+      "Weakness": "Sensitivity to noise; excessive sound can stun him.",
+      "Strenght": "Vibrational shockwaves can knock villains off their feet.",
+      "BackgroundStory": "Discovered this power at a wild fiesta after a magical shot."
+    },
+    {
+      "Id": "24",
+      "Sex": "Female",
+      "Name": "Lady Lollipop",
+      "Description": "Transform enemies into friendly candy creatures, promoting kindness and happiness.",
+      "Weakness": "Her lollipops can be eaten by villains to regain their rage.",
+      "Strenght": "Sweetness overpowers even the strongest wickedness; makes friends with candy.",
+      "BackgroundStory": "A candy maker enchanted during a full moon."
+    },
+    {
+      "Id": "25",
+      "Sex": "Male",
+      "Name": "The Cucumber Crusader",
+      "Description": "Can create shields and weapons made of cucumber that rejuvenate the spirit.",
+      "Weakness": "High temperatures cause his weapons to wilt.",
+      "Strenght": "Hydration powers grant other heroes replenishment when near him.",
+      "BackgroundStory": "A nutritionist exposed to a mutagenic salad dressing during a science fair."
+    }
+  ]
+}

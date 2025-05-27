@@ -5,7 +5,7 @@ using Microsoft.SemanticKernel.Agents;
 using Microsoft.SemanticKernel.ChatCompletion;
 using Microsoft.SemanticKernel.Connectors.AzureOpenAI;
 using Shared;
-using StructuredOutput.Models;
+using StructuredOutputExample.Models;
 
 //Getting Configuration
 var configuration = ConfigurationManager.GetConfiguration();

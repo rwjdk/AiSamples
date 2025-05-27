@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Client;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.Agents;
 using Microsoft.SemanticKernel.Connectors.AzureOpenAI;
@@ -110,9 +110,12 @@ Kernel GetKernel()
     return kernel1;
 }
 
-public enum ServerToConnectTo
+namespace Client
 {
-    GitHub,
-    LocalServerExe,
-    RemoteServer
+    public enum ServerToConnectTo
+    {
+        GitHub,
+        LocalServerExe,
+        RemoteServer
+    }
 }

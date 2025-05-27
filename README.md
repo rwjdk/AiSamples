@@ -10,7 +10,8 @@ These Samples rely on an Azure OpenAI Resource with the following to be set up w
 {
   "Endpoint": "todo", //URL of your Azure OpenAI Service
   "Key": "todo", //Key of your Azure OpenAI Service
-  "ChatDeploymentName": "todo" //DeploymentName of your Azure OpenAI Chat-model (example: "gpt-4o-mini")
+  "ChatDeploymentName": "todo", //DeploymentName of your Azure OpenAI Chat-model (example: "gpt-4o-mini")
+  "EmbeddingModelName": "todo" //Embedding Model for RAG (example: "text-embedding-ada-002")
 }
 ```
 

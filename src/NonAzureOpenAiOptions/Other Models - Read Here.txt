@@ -1,0 +1,4 @@
+- Deepseek is on Ollama offline + can be used online using the OpenAi Connector
+- Mistral is on Ollama offline + Official Mistral Connector [Not personally tested]
+- Anthropic is not yet supported (In progress: https://github.com/microsoft/semantic-kernel/issues/5690)
+- Grok is not yet supported (https://github.com/microsoft/semantic-kernel/discussions/9623)

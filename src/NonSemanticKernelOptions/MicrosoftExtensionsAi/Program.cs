@@ -1,0 +1,42 @@
+﻿using System.ComponentModel;
+using Azure;
+using Azure.AI.OpenAI;
+using Microsoft.Extensions.AI;
+using Shared;
+using ChatMessage = Microsoft.Extensions.AI.ChatMessage;
+
+Configuration configuration = ConfigurationManager.GetConfiguration();
+
+AzureOpenAIClient azureOpenAiClient = new(new Uri(configuration.Endpoint), new AzureKeyCredential(configuration.Key));
+IChatClient chatClient = new ChatClientBuilder(azureOpenAiClient.GetChatClient(configuration.ChatDeploymentName).AsIChatClient())
+    .UseFunctionInvocation()
+    .Build();
+
+ChatOptions chatOptions = new()
+{
+    Tools = [AIFunctionFactory.Create(GetWeather)]
+};
+
+List<ChatMessage> messages = [];
+while (true)
+{
+    Console.Write("> ");
+    var inputFromUser = Console.ReadLine();
+    if (!string.IsNullOrWhiteSpace(inputFromUser))
+    {
+        messages.Add(new ChatMessage(ChatRole.User, inputFromUser));
+        await foreach (var response in chatClient.GetStreamingResponseAsync(messages, chatOptions))
+        {
+            Console.Write(response.Text);
+        }
+    }
+
+    messages.Clear();
+
+    Console.WriteLine();
+    Console.WriteLine(string.Empty.PadLeft(50, '*'));
+    Console.WriteLine();
+}
+
+[Description("Gets the weather")]
+static string GetWeather() => Random.Shared.NextDouble() > 0.5 ? "It's sunny" : "It's raining";
