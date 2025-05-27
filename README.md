@@ -2,7 +2,7 @@
 In this Repo, we explore various AI Samples to learn to be successful with AI in C# and Semantic Kernel
 
 ## Setup
-These Samples rely on an Azure OpenAI Resource with the following to be set up with .NET User Secrets in the Shared Project (in the following format)
+Most of these Samples rely on an Azure OpenAI Resource with the following to be set up with .NET User Secrets in the Shared Project (in the following format)
 
 > **secrets.json**
 ```js    
