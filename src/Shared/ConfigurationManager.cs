@@ -13,6 +13,7 @@ public class ConfigurationManager
       "EmbeddingModelName": "todo", //[Optional] Embedding Model for RAG (example: "text-embedding-ada-002")
       "AzureAiFoundryAgentEndpoint" : "todo", //[Optional] Endpoint for the Azure AI Foundry Agents (if you wish to test those demos)
       "AzureAiFoundryAgentId" : "todo", //[Optional] ID of your agent for the Azure AI Foundry Agents (if you wish to test those demos)
+      "BingApiKey" : "todo" //[OPTIONAL] If you wish to use BingSearch in AI Agents
     }
     ************************************************************************************************************************************************
     - See the how-to guides on how to create your Azure Resources in the ReadMe
@@ -30,7 +31,8 @@ public class ConfigurationManager
         string embeddingModelName = configurationRoot["EmbeddingModelName"] ?? string.Empty;
         string azureAiFoundryAgentEndpoint = configurationRoot["AzureAiFoundryAgentEndpoint"] ?? string.Empty;
         string azureAiFoundryAgentId = configurationRoot["AzureAiFoundryAgentId"] ?? string.Empty;
+        string bingApiKey = configurationRoot["BingApiKey"] ?? string.Empty;
 
-        return new Configuration(endpoint, key, chatDeploymentName, embeddingModelName, azureAiFoundryAgentEndpoint, azureAiFoundryAgentId);
+        return new Configuration(endpoint, key, chatDeploymentName, embeddingModelName, azureAiFoundryAgentEndpoint, azureAiFoundryAgentId, bingApiKey);
     }
 }

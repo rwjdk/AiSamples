@@ -14,6 +14,7 @@ Most of these Samples rely on an Azure OpenAI Resource with the following to be 
   "EmbeddingModelName": "todo", //[Optional] Embedding Model for RAG (example: "text-embedding-ada-002")
   "AzureAiFoundryAgentEndpoint" : "todo", //[Optional] Endpoint for the Azure AI Foundry Agents (if you wish to test those demos)
   "AzureAiFoundryAgentId" : "todo", //[Optional] ID of your agent for the Azure AI Foundry Agents (if you wish to test those demos)
+  "BingApiKey" : "todo" //[OPTIONAL] If you wish to use BingSearch in AI Agents
 }
 ```
 
