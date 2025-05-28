@@ -26,6 +26,7 @@ Most of these Samples rely on an Azure OpenAI Resource with the following to be 
 - [Model Context Protocol](src/ModelContextProtocol)
 - [Function Calling](src/FunctionCallingExample)
 - [RAG](src/RagExample)
+- [Azure AI Foundry Agents](/src/AiFoundryHelloWorld)
 - [Non Azure OpenAI options](src/NonAzureOpenAiOptions)
 - [Non Semantic Kernel options](src/NonSemanticKernelOptions)
 
