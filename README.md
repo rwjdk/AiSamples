@@ -2,7 +2,7 @@
 In this Repo, we explore various AI Samples to learn to be successful with AI in C# and Semantic Kernel
 
 ## Setup
-These Samples rely on an Azure OpenAI Resource with the following to be set up with .NET User Secrets in the Shared Project (in the following format)
+Most of these Samples rely on an Azure OpenAI Resource with the following to be set up with .NET User Secrets in the Shared Project (in the following format)
 
 > **secrets.json**
 ```js    
@@ -21,8 +21,13 @@ These Samples rely on an Azure OpenAI Resource with the following to be set up w
 - See the how-to guides on how to create your Azure Resources
 
 ## Samples:
+- [Hello World](src/HelloWorldExample)
 - [Structured Output](src/StructuredOutput)
 - [Model Context Protocol](src/ModelContextProtocol)
+- [Function Calling](src/FunctionCallingExample)
+- [RAG](src/RagExample)
+- [Non Azure OpenAI options](src/NonAzureOpenAiOptions)
+- [Non Semantic Kernel options](src/NonSemanticKernelOptions)
 
 ## How-to Guides
 - General
