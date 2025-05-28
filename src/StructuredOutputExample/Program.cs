@@ -7,6 +7,8 @@ using Microsoft.SemanticKernel.Connectors.AzureOpenAI;
 using Shared;
 using StructuredOutputExample.Models;
 
+//Video covering this sample: https://youtu.be/mW9ocIMHe7s
+
 //Getting Configuration
 var configuration = ConfigurationManager.GetConfiguration();
 

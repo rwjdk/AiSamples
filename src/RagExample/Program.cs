@@ -10,6 +10,8 @@ using System.Text;
 using System.Text.Json;
 using Microsoft.Extensions.DependencyInjection;
 
+//Video covering this sample: https://youtu.be/OkH9l_4IX4o
+
 #pragma warning disable SKEXP0010
 
 //Configuration

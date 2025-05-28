@@ -4,6 +4,8 @@ using Microsoft.SemanticKernel.ChatCompletion;
 using Microsoft.SemanticKernel.Connectors.Ollama;
 using Microsoft.SemanticKernel.Plugins.Core;
 
+//Video covering this sample: https://youtu.be/B44eE62aQJg
+
 #pragma warning disable SKEXP0070
 const string chatModel = "llama3.2";
 const string endpoint = "http://127.0.0.1:11434";

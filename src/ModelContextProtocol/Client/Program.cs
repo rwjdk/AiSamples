@@ -5,6 +5,8 @@ using Microsoft.SemanticKernel.Connectors.AzureOpenAI;
 using ModelContextProtocol.Client;
 using Shared;
 
+//Video covering this sample: https://youtu.be/uM-RYDCSkzs
+
 #pragma warning disable SKEXP0001
 
 Configuration configuration = Shared.ConfigurationManager.GetConfiguration();

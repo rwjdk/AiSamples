@@ -8,6 +8,8 @@ using Microsoft.SemanticKernel.Connectors.AzureOpenAI;
 using Microsoft.SemanticKernel.Plugins.Core;
 using Shared;
 
+//Video covering this sample: https://youtu.be/MaIpcjoL9Gc
+
 Configuration configuration = ConfigurationManager.GetConfiguration();
 var builder = Kernel.CreateBuilder();
 builder.AddAzureOpenAIChatCompletion(configuration.ChatDeploymentName, configuration.Endpoint, configuration.Key);
