@@ -17,6 +17,9 @@
   </Folder>
   <Folder Name="/ModelContextProtocol/">
     <Project Path="ModelContextProtocol/Client/Client.csproj" />
+  </Folder>
+  <Folder Name="/ModelContextProtocol/Servers/">
+    <Project Path="ModelContextProtocol/RemoteServerUsingAzureFunctions/RemoteServerUsingAzureFunctions.csproj" />
     <Project Path="ModelContextProtocol/LocalServer/LocalServer.csproj" />
     <Project Path="ModelContextProtocol/RemoteServer/RemoteServer.csproj" />
   </Folder>
