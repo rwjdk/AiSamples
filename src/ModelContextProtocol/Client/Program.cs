@@ -3,6 +3,7 @@ using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.Agents;
 using Microsoft.SemanticKernel.Connectors.AzureOpenAI;
 using ModelContextProtocol.Client;
+using ModelContextProtocol.Protocol;
 using Shared;
 
 //Video covering this sample: https://youtu.be/uM-RYDCSkzs
@@ -29,7 +30,7 @@ switch (serverToConnectTo)
 
         await ListAvailableTools(client);
         await CallATool(client, "MyServerTool_Tool1", []);
-        await CallATool(client, "MyServerTool_Tool2", new Dictionary<string, object> { { "input1", "MyInput" } });
+        await CallATool(client, "MyServerTool_Tool2", new Dictionary<string, object?> { { "input1", "MyInput" } });
         break;
     }
     case ServerToConnectTo.GitHub:
@@ -69,18 +70,18 @@ switch (serverToConnectTo)
     case ServerToConnectTo.RemoteServer:
     {
         string urlToRemoteServer = "https://localhost:7200"; //todo: Set URL of Remote server
-        var clientTransport = new SseClientTransport(new SseClientTransportOptions
+        SseClientTransport clientTransport = new(new SseClientTransportOptions
         {
             Name = "RemoteServer",
-            UseStreamableHttp = true,
+            TransportMode = HttpTransportMode.StreamableHttp,
             Endpoint = new Uri(urlToRemoteServer),
         });
 
-        var client = await McpClientFactory.CreateAsync(clientTransport);
+        IMcpClient client = await McpClientFactory.CreateAsync(clientTransport);
 
         await ListAvailableTools(client);
         await CallATool(client, "MyServerTool_Tool1", []);
-        await CallATool(client, "MyServerTool_Tool2", new Dictionary<string, object> { { "input1", "MyInput" } });
+        await CallATool(client, "MyServerTool_Tool2", new Dictionary<string, object?> { { "input1", "MyInput" } });
         break;
     }
 }
@@ -88,16 +89,16 @@ switch (serverToConnectTo)
 async Task ListAvailableTools(IMcpClient mcpClient)
 {
     Console.WriteLine("Available Tools");
-    foreach (var tool in await mcpClient.ListToolsAsync())
+    foreach (McpClientTool tool in await mcpClient.ListToolsAsync())
     {
         Console.WriteLine($"- {tool.Name} ({tool.Description})");
     }
 }
 
-async Task CallATool(IMcpClient mcpClient, string toolName, Dictionary<string, object> args)
+async Task CallATool(IMcpClient mcpClient, string toolName, Dictionary<string, object?> args)
 {
     Console.WriteLine($"Call tool: {toolName}");
-    var result = await mcpClient.CallToolAsync(
+    CallToolResponse result = await mcpClient.CallToolAsync(
         toolName,
         args,
         cancellationToken: CancellationToken.None);

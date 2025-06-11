@@ -2,5 +2,5 @@
 
 public class SuperHeroData
 {
-    public SuperHero[] Heroes { get; set; }
+    public required SuperHero[] Heroes { get; set; }
 }

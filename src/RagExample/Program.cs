@@ -76,7 +76,7 @@ async Task AddDataToVectorStore(VectorStoreCollection<string, SuperHeroVectorEnt
         description.AppendLine($"Name: {superHero.Name}");
         description.AppendLine($"Sex: {superHero.Sex}");
         description.AppendLine($"Description: {superHero.Description}");
-        description.AppendLine($"Strength: {superHero.Strenght}");
+        description.AppendLine($"Strength: {superHero.Strength}");
         description.AppendLine($"Weakness: {superHero.Weakness}");
         description.AppendLine($"BackgroundStory: {superHero.BackgroundStory}");
         await vectorStoreRecordCollection.UpsertAsync(new SuperHeroVectorEntity

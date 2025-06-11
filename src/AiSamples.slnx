@@ -1,0 +1,31 @@
+<Solution>
+  <Folder Name="/- NonAzureOpenAiSamples -/">
+    <Project Path="NonAzureOpenAiOptions/GoogleGeminiSample/GoogleGeminiSample.csproj" />
+    <Project Path="NonAzureOpenAiOptions/OfflineOllamaSample/OllamaSample.csproj" />
+  </Folder>
+  <Folder Name="/- NonSemanticKernelSamples -/">
+    <Project Path="NonSemanticKernelOptions/AzureOpenAiNuget/AzureOpenAiNuget.csproj" />
+    <Project Path="NonSemanticKernelOptions/MicrosoftExtensionsAi/MicrosoftExtensionsAi.csproj" />
+    <Project Path="NonSemanticKernelOptions/OpenAiNuget/OpenAiNuget.csproj" />
+  </Folder>
+  <Folder Name="/AiFoundry/">
+    <Project Path="AiFoundryHelloWorld/AiFoundryHelloWorld.csproj" />
+    <Project Path="AiFoundrySemanticKernel/AiFoundrySemanticKernel.csproj" />
+  </Folder>
+  <Folder Name="/FunctionCalling/">
+    <Project Path="FunctionCallingExample/FunctionCallingExample.csproj" />
+  </Folder>
+  <Folder Name="/ModelContextProtocol/">
+    <Project Path="ModelContextProtocol/Client/Client.csproj" />
+    <Project Path="ModelContextProtocol/LocalServer/LocalServer.csproj" />
+    <Project Path="ModelContextProtocol/RemoteServer/RemoteServer.csproj" />
+  </Folder>
+  <Folder Name="/RAG/">
+    <Project Path="RagExample/RagExample.csproj" />
+  </Folder>
+  <Folder Name="/StructuredOutput/">
+    <Project Path="StructuredOutputExample/StructuredOutputExample.csproj" />
+  </Folder>
+  <Project Path="HelloWorldExample/HelloWorld.csproj" />
+  <Project Path="Shared/Shared.csproj" />
+</Solution>

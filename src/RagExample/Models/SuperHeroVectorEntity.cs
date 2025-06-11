@@ -6,16 +6,16 @@ namespace RagExample.Models;
 public class SuperHeroVectorEntity
 {
     [VectorStoreKey]
-    public string Id { get; set; }
+    public required string Id { get; set; }
 
     [VectorStoreData]
-    public string Name { get; set; }
+    public required string Name { get; set; }
 
     [VectorStoreData(IsIndexed = true)]
-    public string Sex { get; set; }
+    public required string Sex { get; set; }
 
     [VectorStoreData]
-    public string Description { get; set; }
+    public required string Description { get; set; }
 
     [VectorStoreVector(1536, DistanceFunction = DistanceFunction.CosineSimilarity, IndexKind = IndexKind.Hnsw)]
     public string? DescriptionEmbedding => Description;
