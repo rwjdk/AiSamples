@@ -14,7 +14,6 @@ IChatClient chatClient = new ChatClientBuilder(azureOpenAiClient.GetChatClient(c
     .UseFunctionInvocation()
     .Build();
 
-
 //Embedding sample
 EmbeddingClient embeddingClient = azureOpenAiClient.GetEmbeddingClient(configuration.EmbeddingModelName);
 ClientResult<OpenAIEmbedding> result = await embeddingClient.GenerateEmbeddingAsync("Hello World");
