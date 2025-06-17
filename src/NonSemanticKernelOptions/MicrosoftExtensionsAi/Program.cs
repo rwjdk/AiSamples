@@ -1,7 +1,9 @@
-﻿using System.ComponentModel;
+﻿using System.ClientModel;
+using System.ComponentModel;
 using Azure;
 using Azure.AI.OpenAI;
 using Microsoft.Extensions.AI;
+using OpenAI.Embeddings;
 using Shared;
 using ChatMessage = Microsoft.Extensions.AI.ChatMessage;
 
@@ -12,6 +14,13 @@ IChatClient chatClient = new ChatClientBuilder(azureOpenAiClient.GetChatClient(c
     .UseFunctionInvocation()
     .Build();
 
+
+//Embedding sample
+EmbeddingClient embeddingClient = azureOpenAiClient.GetEmbeddingClient(configuration.EmbeddingModelName);
+ClientResult<OpenAIEmbedding> result = await embeddingClient.GenerateEmbeddingAsync("Hello World");
+ReadOnlyMemory<float> vector = result.Value.ToFloats();
+
+//Chat with tools sample
 ChatOptions chatOptions = new()
 {
     Tools = [AIFunctionFactory.Create(GetWeather)]
