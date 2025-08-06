@@ -8,6 +8,9 @@
     <Project Path="NonSemanticKernelOptions/MicrosoftExtensionsAi/MicrosoftExtensionsAi.csproj" />
     <Project Path="NonSemanticKernelOptions/OpenAiNuget/OpenAiNuget.csproj" />
   </Folder>
+  <Folder Name="/AiFoundry.Local/">
+    <Project Path="AiFoundry.Local.HelloWorld/AiFoundry.Local.HelloWorld.csproj" Id="8d789c19-915e-4fae-b326-411bebab6232" />
+  </Folder>
   <Folder Name="/AiFoundry/">
     <Project Path="AiFoundryHelloWorld/AiFoundryHelloWorld.csproj" />
     <Project Path="AiFoundrySemanticKernel/AiFoundrySemanticKernel.csproj" />
