@@ -12,7 +12,7 @@ public static class HowIDoIt
         Configuration configuration = ConfigurationManager.GetConfiguration();
 
         var kernelBuilder = Kernel.CreateBuilder();
-        kernelBuilder.AddAzureOpenAIChatCompletion("gpt-5-mini", configuration.Endpoint, configuration.Key);
+        kernelBuilder.AddAzureOpenAIChatCompletion(configuration.ChatDeploymentName, configuration.Endpoint, configuration.Key);
         var kernel = kernelBuilder.Build();
 
         var agent = new ChatCompletionAgent
