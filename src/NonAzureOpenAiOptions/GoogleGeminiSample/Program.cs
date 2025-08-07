@@ -34,6 +34,7 @@ while (true)
         conversation.Add(new ChatMessageContent(AuthorRole.User, inputFromUser));
         await foreach (var response in agent.InvokeStreamingAsync(conversation))
         {
+            conversation.Add(new ChatMessageContent(AuthorRole.Assistant, response.Message.Content));
             Console.Write(response.Message);
         }
     }

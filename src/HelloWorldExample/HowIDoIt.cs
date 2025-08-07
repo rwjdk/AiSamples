@@ -12,7 +12,7 @@ public static class HowIDoIt
         Configuration configuration = ConfigurationManager.GetConfiguration();
 
         var kernelBuilder = Kernel.CreateBuilder();
-        kernelBuilder.AddAzureOpenAIChatCompletion(configuration.ChatDeploymentName, configuration.Endpoint, configuration.Key);
+        kernelBuilder.AddAzureOpenAIChatCompletion("gpt-5-mini", configuration.Endpoint, configuration.Key);
         var kernel = kernelBuilder.Build();
 
         var agent = new ChatCompletionAgent
@@ -31,6 +31,7 @@ public static class HowIDoIt
                 conversation.Add(new ChatMessageContent(AuthorRole.User, inputFromUser));
                 await foreach (AgentResponseItem<StreamingChatMessageContent> response in agent.InvokeStreamingAsync(conversation))
                 {
+                    conversation.Add(new ChatMessageContent(AuthorRole.Assistant, response.Message.Content));
                     Console.Write(response.Message);
                 }
             }
