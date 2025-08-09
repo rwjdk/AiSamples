@@ -34,4 +34,8 @@
   </Folder>
   <Project Path="HelloWorldExample/HelloWorld.csproj" />
   <Project Path="Shared/Shared.csproj" />
+  <Folder Name="/Codex/">
+    <Project Path="HelloCodex/HelloCodex.csproj" />
+    <Project Path="HelloCodex.BlazorServer/HelloCodex.BlazorServer.csproj" />
+  </Folder>
 </Solution>

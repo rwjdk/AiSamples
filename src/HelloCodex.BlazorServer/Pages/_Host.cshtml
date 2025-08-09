@@ -1,0 +1,28 @@
+@page "/"
+@namespace HelloCodex.BlazorServer.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="~/" />
+    <link rel="stylesheet" href="css/site.css" />
+    <title>HelloCodex Blazor Server</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="apple-touch-icon" href="icon-512.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="HelloCodex Blazor Server App" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcp1lIv3yDdqKj7o8WQig==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <component type="typeof(App)" render-mode="ServerPrerendered" />
+    <script src="_framework/blazor.server.js"></script>
+    <script>/* placeholder for any custom scripts */</script>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <a class="skip-link" href="#main">Skip to main content</a>
+</body>
+</html>
