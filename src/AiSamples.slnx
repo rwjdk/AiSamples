@@ -18,7 +18,9 @@
   <Folder Name="/FunctionCalling/">
     <Project Path="FunctionCallingExample/FunctionCallingExample.csproj" />
   </Folder>
-  <Folder Name="/Gpt5AndReasoning/" />
+  <Folder Name="/Gpt5AndReasoning/">
+    <Project Path="Gtp5.SemanticKernel/Gtp5.SemanticKernel.csproj" Id="a526ed70-01d2-43a5-be40-b3e6f95853d2" />
+  </Folder>
   <Folder Name="/ModelContextProtocol/">
     <Project Path="ModelContextProtocol/Client/Client.csproj" />
   </Folder>
