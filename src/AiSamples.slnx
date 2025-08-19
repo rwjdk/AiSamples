@@ -18,6 +18,7 @@
   <Folder Name="/FunctionCalling/">
     <Project Path="FunctionCallingExample/FunctionCallingExample.csproj" />
   </Folder>
+  <Folder Name="/Gpt5AndReasoning/" />
   <Folder Name="/ModelContextProtocol/">
     <Project Path="ModelContextProtocol/Client/Client.csproj" />
   </Folder>

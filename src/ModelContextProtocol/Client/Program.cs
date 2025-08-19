@@ -98,11 +98,11 @@ async Task ListAvailableTools(IMcpClient mcpClient)
 async Task CallATool(IMcpClient mcpClient, string toolName, Dictionary<string, object?> args)
 {
     Console.WriteLine($"Call tool: {toolName}");
-    CallToolResponse result = await mcpClient.CallToolAsync(
+    CallToolResult result = await mcpClient.CallToolAsync(
         toolName,
         args,
         cancellationToken: CancellationToken.None);
-    Console.WriteLine(result.Content.First(c => c.Type == "text").Text);
+    Console.WriteLine(result.Content.First(c => c.Type == "text"));
 }
 
 Kernel GetKernel()

@@ -9,9 +9,9 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AI.Foundry.Local" Version="0.1.0" />
-    <PackageReference Include="Microsoft.SemanticKernel.Agents.Core" Version="1.61.0" />
-    <PackageReference Include="Microsoft.SemanticKernel.Connectors.OpenAI" Version="1.61.0" />
-    <PackageReference Include="Microsoft.SemanticKernel.Core" Version="1.61.0" />
+    <PackageReference Include="Microsoft.SemanticKernel.Agents.Core" Version="1.62.0" />
+    <PackageReference Include="Microsoft.SemanticKernel.Connectors.OpenAI" Version="1.62.0" />
+    <PackageReference Include="Microsoft.SemanticKernel.Core" Version="1.62.0" />
   </ItemGroup>
 
 </Project>
