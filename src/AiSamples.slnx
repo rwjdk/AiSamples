@@ -32,6 +32,9 @@
   <Folder Name="/RAG/">
     <Project Path="RagExample/RagExample.csproj" />
   </Folder>
+  <Folder Name="/SK-MEAI-Comparison/">
+    <Project Path="SK-MEAI-Comparison/SK-MEAI-Comparison.csproj" Id="e5ee52f6-457f-4c5f-adff-8a5cd13750d7" />
+  </Folder>
   <Folder Name="/StructuredOutput/">
     <Project Path="StructuredOutputExample/StructuredOutputExample.csproj" />
   </Folder>
