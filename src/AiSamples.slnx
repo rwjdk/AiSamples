@@ -29,6 +29,9 @@
     <Project Path="ModelContextProtocol/LocalServer/LocalServer.csproj" />
     <Project Path="ModelContextProtocol/RemoteServer/RemoteServer.csproj" />
   </Folder>
+  <Folder Name="/PromptEngeneering/">
+    <Project Path="PromptEngeneering/PromptEngeneering.csproj" Id="1619bbaf-4233-4e9c-9a1e-b062c0f89496" />
+  </Folder>
   <Folder Name="/RAG/">
     <Project Path="RagExample/RagExample.csproj" />
   </Folder>
