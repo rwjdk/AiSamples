@@ -7,9 +7,9 @@ using Shared;
 
 Configuration configuration = ConfigurationManager.GetConfiguration();
 
-var kernelBuilder = Kernel.CreateBuilder();
+IKernelBuilder kernelBuilder = Kernel.CreateBuilder();
 kernelBuilder.AddAzureOpenAIChatCompletion(configuration.ChatDeploymentName, configuration.Endpoint, configuration.Key);
-var kernel = kernelBuilder.Build();
+Kernel kernel = kernelBuilder.Build();
 
 string developerMessage = "You are a friendly AI, helping the user to answer questions";
 //developerMessage = "Speak like a pirate";
@@ -18,7 +18,7 @@ string developerMessage = "You are a friendly AI, helping the user to answer que
 //developerMessage = "Your answer should max be 10 words";
 //developerMessage = "Return movie titles in French when asked for them";
 
-var agent = new ChatCompletionAgent
+ChatCompletionAgent agent = new()
 {
     Kernel = kernel,
     Instructions = developerMessage,
@@ -32,7 +32,7 @@ List<ChatMessageContent> conversation = [];
 while (true)
 {
     Console.Write("> ");
-    var inputFromUser = Console.ReadLine();
+    string? inputFromUser = Console.ReadLine();
     if (!string.IsNullOrWhiteSpace(inputFromUser))
     {
         conversation.Add(new ChatMessageContent(AuthorRole.User, inputFromUser));

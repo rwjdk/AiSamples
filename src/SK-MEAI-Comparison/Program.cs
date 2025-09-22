@@ -128,7 +128,7 @@ string question = "What is the capital of Denmark and what is its population?";
     City result = structuredOutputResponse.Result;
 
     //Function Calling
-    var responseFromToolCall = await chatClient.GetResponseAsync("How is the Weather", new ChatOptions
+    ChatResponse responseFromToolCall = await chatClient.GetResponseAsync("How is the Weather", new ChatOptions
     {
         Tools = [AIFunctionFactory.Create(Tools.GetWeather)]
     });
@@ -186,7 +186,7 @@ switch (framework)
                 ResponseFormat = typeof(City) //Warning (this is not wired up to use IChatClient and need the ChatCompletion instead) [Bugfix in progress]
             })
         };
-        await foreach (var response in agentWithStructuredOutput.InvokeAsync(question))
+        await foreach (AgentResponseItem<ChatMessageContent> response in agentWithStructuredOutput.InvokeAsync(question))
         {
             string json = response.Message.Content!;
             City? city = JsonSerializer.Deserialize<City>(json, new JsonSerializerOptions
@@ -206,7 +206,7 @@ switch (framework)
                 FunctionChoiceBehavior = FunctionChoiceBehavior.Auto()
             })
         };
-        await foreach (var response in agentWithTool.InvokeAsync("How is the weather"))
+        await foreach (AgentResponseItem<ChatMessageContent> response in agentWithTool.InvokeAsync("How is the weather"))
         {
             Console.WriteLine(response.Message);
         }
@@ -250,12 +250,12 @@ switch (framework)
         });
 
         //Insert Data
-        VectorStoreEntity myData = new VectorStoreEntity
+        VectorStoreEntity myData = new()
         {
             Id = Guid.NewGuid().ToString(),
             Description = "Hello World"
         };
-        var collection = store.GetCollection<string, VectorStoreEntity>("myStore");
+        VectorStoreCollection<string, VectorStoreEntity> collection = store.GetCollection<string, VectorStoreEntity>("myStore");
         await collection.EnsureCollectionExistsAsync();
         await collection.UpsertAsync(myData);
 

@@ -10,7 +10,7 @@ using StructuredOutputExample.Models;
 //Video covering this sample: https://youtu.be/mW9ocIMHe7s
 
 //Getting Configuration
-var configuration = ConfigurationManager.GetConfiguration();
+Configuration configuration = ConfigurationManager.GetConfiguration();
 
 Console.WriteLine("Welcome to the Structured Output Sample");
 Console.WriteLine("1. When you ask an LLM a question, it will default decide how it respond respond back to you (plain text or markdown)");
@@ -21,30 +21,30 @@ Console.WriteLine(string.Empty.PadLeft(100, '*'));
 Console.WriteLine("Let's try it out. Below give you option to choose Normal and Structured Output so you can see the difference:");
 
 //Creating the Semantic Kernel Kernel-object
-var kernelBuilder = Kernel.CreateBuilder();
+IKernelBuilder kernelBuilder = Kernel.CreateBuilder();
 kernelBuilder.AddAzureOpenAIChatCompletion(configuration.ChatDeploymentName, configuration.Endpoint, configuration.Key);
-var kernel = kernelBuilder.Build();
+Kernel kernel = kernelBuilder.Build();
 
-var messageToLlm = new ChatMessageContent(AuthorRole.User, "What are the top 10 Movies according to IMDB?");
+ChatMessageContent messageToLlm = new(AuthorRole.User, "What are the top 10 Movies according to IMDB?");
 
 while (true)
 {
     Console.Write("Press 'N' for Normal or 'S' for Structured output (or 'E' to Exit)");
-    var key = Console.ReadKey();
+    ConsoleKeyInfo key = Console.ReadKey();
     Console.Clear();
     switch (key.Key)
     {
         case ConsoleKey.N: //Normal Response
         {
             //Define an agent
-            var agent = new ChatCompletionAgent
+            ChatCompletionAgent agent = new()
             {
                 Kernel = kernel,
                 Instructions = "You are a Movie Expert"
             };
             Console.WriteLine("Asking LLM 'What is the top 10 movies according to IMDB' using a normal response");
 
-            await foreach (var response in agent.InvokeStreamingAsync(messageToLlm))
+            await foreach (AgentResponseItem<StreamingChatMessageContent> response in agent.InvokeStreamingAsync(messageToLlm))
             {
                 Console.Write(response.Message.Content);
             }
@@ -56,7 +56,7 @@ while (true)
         case ConsoleKey.S: //Structured Output Response
         {
             //Define an agent (In structured we need to define the Response-format for the agent)
-            var agent = new ChatCompletionAgent
+            ChatCompletionAgent agent = new()
             {
                 Kernel = kernel,
                 Instructions = "You are a Movie Expert",
@@ -68,10 +68,10 @@ while (true)
 
 
             Console.WriteLine("Asking LLM 'What is the top 10 movies according to IMDB' using a Structured Output");
-            await foreach (var response in agent.InvokeAsync(messageToLlm)) //Note that streaming content back do not make sense in structured output
+            await foreach (AgentResponseItem<ChatMessageContent> response in agent.InvokeAsync(messageToLlm)) //Note that streaming content back do not make sense in structured output
             {
                 string json = response.Message.Content!;
-                var movieResult = JsonSerializer.Deserialize<MovieResult>(json, new JsonSerializerOptions
+                MovieResult? movieResult = JsonSerializer.Deserialize<MovieResult>(json, new JsonSerializerOptions
                 {
                     Converters = { new JsonStringEnumConverter() } //Needed if you use enums as LLM get them as name strings
                 });
@@ -79,7 +79,7 @@ while (true)
                 //Now that response is JSON we are in charge of the format
                 int counter = 1;
                 Console.WriteLine(movieResult!.MessageBack);
-                foreach (var movie in movieResult.Top10Movies)
+                foreach (Movie movie in movieResult.Top10Movies)
                 {
                     Console.WriteLine($"{counter}: {movie.Title} ({movie.YearOfRelease}) - Genre: {movie.Genre} - Director: {movie.Director} - IMDB Score: {movie.ImdbScore}");
                     counter++;

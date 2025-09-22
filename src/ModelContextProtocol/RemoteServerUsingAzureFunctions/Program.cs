@@ -2,7 +2,7 @@ using Microsoft.Azure.Functions.Worker.Builder;
 using Microsoft.Extensions.Hosting;
 using RemoteServerUsingAzureFunctions;
 
-var builder = FunctionsApplication.CreateBuilder(args);
+FunctionsApplicationBuilder builder = FunctionsApplication.CreateBuilder(args);
 
 builder.ConfigureFunctionsWebApplication();
 builder.EnableMcpToolMetadata();

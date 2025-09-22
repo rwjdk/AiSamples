@@ -18,7 +18,7 @@ using Microsoft.Extensions.DependencyInjection;
 Configuration configuration = ConfigurationManager.GetConfiguration();
 
 //Kernel
-var kernelBuilder = Kernel.CreateBuilder();
+IKernelBuilder kernelBuilder = Kernel.CreateBuilder();
 kernelBuilder.AddAzureOpenAIChatCompletion(configuration.ChatDeploymentName, configuration.Endpoint, configuration.Key);
 kernelBuilder.AddAzureOpenAIEmbeddingGenerator(configuration.EmbeddingModelName, configuration.Endpoint, configuration.Key);
 kernelBuilder.Services.AddScoped<VectorStore, InMemoryVectorStore>(options => new InMemoryVectorStore(new InMemoryVectorStoreOptions
@@ -26,13 +26,13 @@ kernelBuilder.Services.AddScoped<VectorStore, InMemoryVectorStore>(options => ne
     EmbeddingGenerator = options.GetRequiredService<IEmbeddingGenerator<string, Embedding<float>>>()
 }));
 
-var kernel = kernelBuilder.Build();
+Kernel kernel = kernelBuilder.Build();
 
-var collection = kernel.GetRequiredService<VectorStore>().GetCollection<string, SuperHeroVectorEntity>("heroes");
+VectorStoreCollection<string, SuperHeroVectorEntity> collection = kernel.GetRequiredService<VectorStore>().GetCollection<string, SuperHeroVectorEntity>("heroes");
 
 await AddDataToVectorStore(collection);
 
-var agent = new ChatCompletionAgent
+ChatCompletionAgent agent = new()
 {
     Kernel = kernel,
     Name = "ComicBookNerd",
@@ -50,7 +50,6 @@ while (true)
     {
         string[] searchResultData = await RagSearch(input);
         List<ChatMessageContent> messages = [];
-        var history = new ChatHistory();
         messages.Add(new ChatMessageContent(AuthorRole.User, $"Superheroes what match question: {string.Join($"{Environment.NewLine}***{Environment.NewLine}", searchResultData)}"));
         messages.Add(new ChatMessageContent(AuthorRole.User, input));
         await foreach (AgentResponseItem<StreamingChatMessageContent> content in agent.InvokeStreamingAsync(messages))
@@ -69,10 +68,10 @@ async Task AddDataToVectorStore(VectorStoreCollection<string, SuperHeroVectorEnt
     Console.WriteLine("Adding Data to InMemory VectorStore");
     string jsonData = File.ReadAllText("Data.json");
     await vectorStoreRecordCollection.EnsureCollectionExistsAsync();
-    var data = JsonSerializer.Deserialize<SuperHeroData>(jsonData)!;
-    foreach (var superHero in data.Heroes)
+    SuperHeroData data = JsonSerializer.Deserialize<SuperHeroData>(jsonData)!;
+    foreach (SuperHero superHero in data.Heroes)
     {
-        StringBuilder description = new StringBuilder();
+        StringBuilder description = new();
         description.AppendLine($"Name: {superHero.Name}");
         description.AppendLine($"Sex: {superHero.Sex}");
         description.AppendLine($"Description: {superHero.Description}");
