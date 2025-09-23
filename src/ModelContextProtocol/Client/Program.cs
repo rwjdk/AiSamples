@@ -19,14 +19,14 @@ switch (serverToConnectTo)
     case ServerToConnectTo.LocalServerExe:
     {
         string pathToLocalServerExe = "LocalServer.exe"; //todo: Set path to local Server
-        var clientTransport = new StdioClientTransport(new StdioClientTransportOptions
+        StdioClientTransport clientTransport = new(new StdioClientTransportOptions
         {
             Name = "LocalServer",
             Command = pathToLocalServerExe,
             Arguments = [],
         });
 
-        var client = await McpClientFactory.CreateAsync(clientTransport);
+        IMcpClient client = await McpClientFactory.CreateAsync(clientTransport);
 
         await ListAvailableTools(client);
         await CallATool(client, "MyServerTool_Tool1", []);
@@ -35,14 +35,14 @@ switch (serverToConnectTo)
     }
     case ServerToConnectTo.GitHub:
     {
-        var clientTransport = new StdioClientTransport(new StdioClientTransportOptions
+        StdioClientTransport clientTransport = new(new StdioClientTransportOptions
         {
             Name = "GitHub",
             Command = "npx",
             Arguments = ["-y", "@modelcontextprotocol/server-github"],
         });
 
-        var client = await McpClientFactory.CreateAsync(clientTransport); //Notice: No Authentication
+        IMcpClient client = await McpClientFactory.CreateAsync(clientTransport); //Notice: No Authentication
 
         await ListAvailableTools(client);
         Kernel kernel = GetKernel();

@@ -11,7 +11,7 @@ using Shared;
 //Video covering this sample: https://youtu.be/MaIpcjoL9Gc
 
 Configuration configuration = ConfigurationManager.GetConfiguration();
-var builder = Kernel.CreateBuilder();
+IKernelBuilder builder = Kernel.CreateBuilder();
 builder.AddAzureOpenAIChatCompletion(configuration.ChatDeploymentName, configuration.Endpoint, configuration.Key);
 
 builder.Services.AddSingleton<IAutoFunctionInvocationFilter, AutoInvocationFilter>();
@@ -20,10 +20,10 @@ Kernel kernel = builder.Build();
 
 kernel.ImportPluginFromType<TimePlugin>();
 
-var myPlugin = new MyFirstPlugin();
+MyFirstPlugin myPlugin = new();
 kernel.ImportPluginFromObject(myPlugin);
 
-var agent = new ChatCompletionAgent
+ChatCompletionAgent agent = new()
 {
     Name = "MyFilesAgent",
     Kernel = kernel,
@@ -44,10 +44,10 @@ Console.OutputEncoding = Encoding.UTF8;
 while (true)
 {
     Console.Write("> ");
-    var question = Console.ReadLine() ?? "";
+    string question = Console.ReadLine() ?? "";
     conversation.Add(new ChatMessageContent(AuthorRole.User, question));
 
-    await foreach (var response in agent.InvokeStreamingAsync(conversation))
+    await foreach (AgentResponseItem<StreamingChatMessageContent> response in agent.InvokeStreamingAsync(conversation))
     {
         conversation.Add(new ChatMessageContent(AuthorRole.Assistant, response.Message.Content));
         Console.Write(response.Message);

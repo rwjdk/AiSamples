@@ -7,7 +7,7 @@ using System.Diagnostics;
 #region Check if Foundry Local is installed
 
 string packageId = "Microsoft.FoundryLocal";
-var process = new Process
+Process process = new()
 {
     StartInfo = new ProcessStartInfo
     {
@@ -31,7 +31,7 @@ if (!isFoundryInstalled)
 {
     Console.WriteLine("Foundry Local not yet installed. Installing... (this might take a few minutes)");
 
-    var installProcess = new Process
+    Process installProcess = new()
     {
         StartInfo = new ProcessStartInfo
         {
@@ -63,7 +63,7 @@ IKernelBuilder builder = Kernel.CreateBuilder();
 builder.AddOpenAIChatCompletion(modelInfo!.ModelId, manager.Endpoint, "no-api-key");
 Kernel kernel = builder.Build();
 
-ChatCompletionAgent agent = new ChatCompletionAgent
+ChatCompletionAgent agent = new()
 {
     Kernel = kernel,
     Instructions = "You are a nice local agent"
@@ -75,7 +75,7 @@ List<ChatMessageContent> conversation = [];
 while (true)
 {
     Console.Write("> ");
-    var inputFromUser = Console.ReadLine();
+    string? inputFromUser = Console.ReadLine();
     if (!string.IsNullOrWhiteSpace(inputFromUser))
     {
         conversation.Add(new ChatMessageContent(AuthorRole.User, inputFromUser));

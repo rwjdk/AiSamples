@@ -16,10 +16,10 @@ public static class HowIDoItWithOptionalStuff
     {
         Configuration configuration = Shared.ConfigurationManager.GetConfiguration();
 
-        var kernelBuilder = Kernel.CreateBuilder();
+        IKernelBuilder kernelBuilder = Kernel.CreateBuilder();
         kernelBuilder.AddAzureOpenAIChatCompletion(configuration.ChatDeploymentName, configuration.Endpoint, configuration.Key);
-        var kernel = kernelBuilder.Build();
-        var agent = new ChatCompletionAgent
+        Kernel kernel = kernelBuilder.Build();
+        ChatCompletionAgent agent = new()
         {
             Kernel = kernel,
             Name = "FriendlyAI", //Optional: Not that it really do anything. Warning name can't contain spaces
@@ -41,7 +41,7 @@ public static class HowIDoItWithOptionalStuff
         while (true)
         {
             Console.Write("> ");
-            var inputFromUser = Console.ReadLine();
+            string? inputFromUser = Console.ReadLine();
             if (!string.IsNullOrWhiteSpace(inputFromUser))
             {
                 conversation.Add(new ChatMessageContent(AuthorRole.User, inputFromUser));

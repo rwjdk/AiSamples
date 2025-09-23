@@ -11,22 +11,22 @@ public static class HowIDoIt
     {
         Configuration configuration = ConfigurationManager.GetConfiguration();
 
-        var kernelBuilder = Kernel.CreateBuilder();
+        IKernelBuilder kernelBuilder = Kernel.CreateBuilder();
         kernelBuilder.AddAzureOpenAIChatCompletion(configuration.ChatDeploymentName, configuration.Endpoint, configuration.Key);
-        var kernel = kernelBuilder.Build();
+        Kernel kernel = kernelBuilder.Build();
 
-        var agent = new ChatCompletionAgent
+        ChatCompletionAgent agent = new()
         {
             Kernel = kernel,
-            Instructions = "You are a friendly AI, helping the user to answer questions", //Give it some personality
+            Instructions = "You are a friendly AI, helping the user to answer questions",
         };
 
         List<ChatMessageContent> conversation = [];
         while (true)
         {
             Console.Write("> ");
-            var inputFromUser = Console.ReadLine();
-            if (!string.IsNullOrWhiteSpace(inputFromUser)) //Ignore if no user input
+            string? inputFromUser = Console.ReadLine();
+            if (!string.IsNullOrWhiteSpace(inputFromUser))
             {
                 conversation.Add(new ChatMessageContent(AuthorRole.User, inputFromUser));
                 await foreach (AgentResponseItem<StreamingChatMessageContent> response in agent.InvokeStreamingAsync(conversation))

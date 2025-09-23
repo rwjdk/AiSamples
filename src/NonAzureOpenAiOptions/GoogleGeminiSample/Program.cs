@@ -5,15 +5,15 @@ using Microsoft.SemanticKernel.Connectors.Google;
 using Microsoft.SemanticKernel.Plugins.Core;
 
 #pragma warning disable SKEXP0070
-var apiKey = "todo";
+string apiKey = "todo";
 string modelId = "todo";
 
-var kernelBuilder = Kernel.CreateBuilder();
+IKernelBuilder kernelBuilder = Kernel.CreateBuilder();
 kernelBuilder.AddGoogleAIGeminiChatCompletion(modelId, apiKey);
-var kernel = kernelBuilder.Build();
+Kernel kernel = kernelBuilder.Build();
 kernel.ImportPluginFromType<TimePlugin>();
 
-var agent = new ChatCompletionAgent
+ChatCompletionAgent agent = new()
 {
     Kernel = kernel,
     Instructions = "You are a friendly AI, helping the user to answer questions",
@@ -28,11 +28,11 @@ List<ChatMessageContent> conversation = [];
 while (true)
 {
     Console.Write("> ");
-    var inputFromUser = Console.ReadLine();
+    string? inputFromUser = Console.ReadLine();
     if (!string.IsNullOrWhiteSpace(inputFromUser))
     {
         conversation.Add(new ChatMessageContent(AuthorRole.User, inputFromUser));
-        await foreach (var response in agent.InvokeStreamingAsync(conversation))
+        await foreach (AgentResponseItem<StreamingChatMessageContent> response in agent.InvokeStreamingAsync(conversation))
         {
             conversation.Add(new ChatMessageContent(AuthorRole.Assistant, response.Message.Content));
             Console.Write(response.Message);

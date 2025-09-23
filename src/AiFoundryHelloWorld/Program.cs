@@ -20,7 +20,7 @@ async Task RunAgentConversation()
     //AIProjectClient projectClient = new(endpoint, new DefaultAzureCredential());
     //PersistentAgentsClient agentsClient = projectClient.GetPersistentAgentsClient();
 
-    PersistentAgentsClient agentsClient = new PersistentAgentsClient(endpoint, new DefaultAzureCredential());
+    PersistentAgentsClient agentsClient = new(endpoint, new DefaultAzureCredential());
 
     PersistentAgent agent = agentsClient.Administration.GetAgent(agentId);
 

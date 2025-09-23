@@ -10,12 +10,12 @@ using Microsoft.SemanticKernel.Plugins.Core;
 const string chatModel = "llama3.2";
 const string endpoint = "http://127.0.0.1:11434";
 
-var kernelBuilder = Kernel.CreateBuilder();
+IKernelBuilder kernelBuilder = Kernel.CreateBuilder();
 kernelBuilder.AddOllamaChatCompletion(modelId: chatModel, new Uri(endpoint));
-var kernel = kernelBuilder.Build();
+Kernel kernel = kernelBuilder.Build();
 kernel.ImportPluginFromType<TimePlugin>();
 
-var agent = new ChatCompletionAgent
+ChatCompletionAgent agent = new()
 {
     Kernel = kernel,
     Instructions = "You are a friendly AI, helping the user to answer questions",
@@ -30,11 +30,11 @@ List<ChatMessageContent> conversation = [];
 while (true)
 {
     Console.Write("> ");
-    var inputFromUser = Console.ReadLine();
+    string? inputFromUser = Console.ReadLine();
     if (!string.IsNullOrWhiteSpace(inputFromUser))
     {
         conversation.Add(new ChatMessageContent(AuthorRole.User, inputFromUser));
-        await foreach (var response in agent.InvokeAsync(conversation))
+        await foreach (AgentResponseItem<ChatMessageContent> response in agent.InvokeAsync(conversation))
         {
             conversation.Add(new ChatMessageContent(AuthorRole.Assistant, response.Message.Content));
             Console.Write(response.Message);

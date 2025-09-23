@@ -8,7 +8,7 @@ using ModelContextProtocol.Server;
 
 #pragma warning disable SKEXP0001
 
-var builder = Host.CreateApplicationBuilder();
+HostApplicationBuilder builder = Host.CreateApplicationBuilder();
 
 //Semantic Kernel Part
 Kernel kernel = Kernel.CreateBuilder().Build();

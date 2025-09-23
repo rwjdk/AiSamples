@@ -8,12 +8,12 @@ using ChatMessageContent = Microsoft.SemanticKernel.ChatMessageContent;
 
 Configuration configuration = ConfigurationManager.GetConfiguration();
 
-var kernelBuilder = Kernel.CreateBuilder();
+IKernelBuilder kernelBuilder = Kernel.CreateBuilder();
 string deploymentName = "gpt-5-mini"; //4 Options: gtp-5 / gpt-5-mini / gpt-5-nano (+ gpt-5-chat)
 kernelBuilder.AddAzureOpenAIChatCompletion(deploymentName, configuration.Endpoint, configuration.Key);
-var kernel = kernelBuilder.Build();
+Kernel kernel = kernelBuilder.Build();
 
-var agent = new ChatCompletionAgent
+ChatCompletionAgent agent = new()
 {
     Kernel = kernel,
     Instructions = "You are a friendly AI, helping the user to answer questions.",

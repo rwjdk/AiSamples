@@ -4,18 +4,18 @@ using OpenAI.Chat;
 string openAiKey = "todo";
 const string chatModel = "todo";
 
-var client = new OpenAIClient(openAiKey);
+OpenAIClient client = new(openAiKey);
 ChatClient chatClient = client.GetChatClient(chatModel);
 
 List<ChatMessage> messages = [];
 while (true)
 {
     Console.Write("> ");
-    var inputFromUser = Console.ReadLine();
+    string? inputFromUser = Console.ReadLine();
     if (!string.IsNullOrWhiteSpace(inputFromUser))
     {
         messages.Add(new UserChatMessage(inputFromUser));
-        await foreach (var response in chatClient.CompleteChatStreamingAsync(messages))
+        await foreach (StreamingChatCompletionUpdate? response in chatClient.CompleteChatStreamingAsync(messages))
         {
             if (response.ContentUpdate.Count > 0)
             {

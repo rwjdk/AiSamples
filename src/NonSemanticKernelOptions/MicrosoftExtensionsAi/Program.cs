@@ -29,11 +29,11 @@ List<ChatMessage> messages = [];
 while (true)
 {
     Console.Write("> ");
-    var inputFromUser = Console.ReadLine();
+    string? inputFromUser = Console.ReadLine();
     if (!string.IsNullOrWhiteSpace(inputFromUser))
     {
         messages.Add(new ChatMessage(ChatRole.User, inputFromUser));
-        await foreach (var response in chatClient.GetStreamingResponseAsync(messages, chatOptions))
+        await foreach (ChatResponseUpdate response in chatClient.GetStreamingResponseAsync(messages, chatOptions))
         {
             Console.Write(response.Text);
         }
