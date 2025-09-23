@@ -9,14 +9,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Azure.AI.OpenAI" Version="2.3.0-beta.1" />
-		<PackageReference Include="Microsoft.Extensions.AI" Version="9.8.0" />
-		<PackageReference Include="Microsoft.Extensions.AI.OpenAI" Version="9.8.0-preview.1.25412.6" />
-		<PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.8" />
-		<PackageReference Include="Microsoft.SemanticKernel" Version="1.62.0" />
-		<PackageReference Include="Microsoft.SemanticKernel.Agents.Core" Version="1.62.0" />
-		<PackageReference Include="Microsoft.SemanticKernel.Connectors.InMemory" Version="1.62.0-preview" />
-		<PackageReference Include="Microsoft.SemanticKernel.Plugins.Core" Version="1.62.0-preview" />
+		<PackageReference Include="Azure.AI.OpenAI" Version="2.3.0-beta.2" />
+		<PackageReference Include="Microsoft.Extensions.AI" Version="9.9.0" />
+		<PackageReference Include="Microsoft.Extensions.AI.OpenAI" Version="9.9.0-preview.1.25458.4" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.9" />
+		<PackageReference Include="Microsoft.SemanticKernel" Version="1.65.0" />
+		<PackageReference Include="Microsoft.SemanticKernel.Agents.Core" Version="1.65.0" />
+		<PackageReference Include="Microsoft.SemanticKernel.Connectors.InMemory" Version="1.65.0-preview" />
+		<PackageReference Include="Microsoft.SemanticKernel.Plugins.Core" Version="1.65.0-preview" />
 	</ItemGroup>
 
 	<ItemGroup>
